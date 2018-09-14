@@ -1,0 +1,418 @@
+$light_color: #fff;
+$dark_color: #555555;
+$decor_color: #c0301c;
+$bg_grey: #f8f8f8;
+$padding_block: 100px 230px;
+
+
+@font-face {
+font-family: "Monserrat";  
+src: url("fonts/montserrat_[allfont.ru].ttf") format("truetype"); 
+font-style: normal; 
+font-weight: normal;
+ }
+@font-face {
+font-family: "RobotoSlab";
+src: url("fonts/ofont.ru_Roboto Slab.ttf") format("truetype");
+font-style: normal; 
+font-weight: normal;    
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    font-family: "RobotoSlab";
+}
+header {
+    background-image: url(images/header_bg.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    height: 770px;
+    padding: 45px 230px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    color: $light_color;
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 460px);
+        z-index: 2;
+        position: absolute;
+        ul {
+            display: flex;
+            width: 540px;
+            justify-content: space-between;
+            li {
+                font-size: 14px;
+                letter-spacing: 0.025em;
+                font-family: "Monserrat"; 
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+    }
+    .header__contant {
+        z-index: 2;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 323px;
+        h1 {
+            font-family: "Monserrat"; 
+            margin-bottom: 20px;
+            font-size: 48px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+        }
+        span {
+            text-align: center;
+            font-size: 20px;
+        }
+        .header__btn {
+            margin: 50px auto 0;
+        }
+    }
+    .header__overlay {
+        background-color: rgba(0, 0, 0, .45);
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+}
+
+//для всех кнопок
+
+button {
+    cursor: pointer;
+}
+
+//для кнопок форм захвата
+
+.btn {
+    border: 2px solid $light_color;
+    width: 180px;
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 48px;
+    background: transparent;
+    color: $light_color;
+    font-size: 16px;
+    font-family: "Monserrat"; 
+    transition: .5s;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+.btn:hover {
+    background-color: $light_color;
+    color: $decor_color;
+}
+
+//общие стили для всех подзаголовков
+
+.discription {
+    text-align: center;
+    color: $dark_color;
+    margin-bottom: 70px;
+}
+
+//для всех списков убираем маркеры
+
+ul {
+    list-style-type: none;
+}
+
+//линия между заголовками и подзаголовками разделов
+
+.linedecor {
+    width: 50px;
+    height: 2px;
+    background-color: $dark_color;
+    margin: 29px auto 28px;
+}
+.linedecor--footer {
+    background-color: $light_color;
+}
+
+//общие стили для заголовков разделов
+
+h2 {
+    font-family: Montserrat;
+    font-size: 20px;
+    color: $dark_color;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+//ключевые направления работы
+
+.services {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: $padding_block;
+    box-sizing: border-box;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        height: auto;
+        li {
+            margin-right: 45px;
+            color: $dark_color;
+            .item__pic {
+                width: 90px;
+                height: 90px;
+                background-color: #ffffff;
+                border: 2px solid #dddddd;
+                border-radius: 50%;
+                box-sizing: border-box;
+                margin: 0 auto;
+                display: flex;
+                img {
+                    margin: auto;
+                }
+            }
+            .item__pic-bg {
+                background-color: $decor_color;
+            }
+            h3 {
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 400;
+                font-family: Montserrat;
+                text-align: center;
+                margin: 29px 0 24px;
+            }
+            p {
+                text-align: center;
+                font-size: 14px;
+                line-height: 24px;
+//                width: 345px;
+            }
+        }
+        li:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+
+//о нас
+
+.aboutus {
+    height: 852px;
+    background-color: $bg_grey;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: $padding_block;
+    .aboutus__text {
+        display: flex;
+        justify-content: center;
+        color: $dark_color;
+        p {
+            width: 553px;
+            height: auto;
+            text-align: justify;
+            font-size: 14px;
+            line-height: 24px;
+        }
+        p:first-child {
+            margin-right: 32px;
+        }
+    }
+}
+
+//форма захвата с параллаксом
+
+.parallax {
+    height: 369px;
+    box-sizing: border-box;
+    background-image: url(images/parallax_bg.jpg);
+    background-size: cover;
+    padding: $padding_block;
+    position: relative;
+    .parallax_content {
+        position: absolute;
+        z-index: 2;
+        width: calc(100% - 460px);
+        height: 171px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        p {
+            color: $light_color;
+            text-align: center;
+            font-family: RobotoSlab;
+            font-size: 30px;
+            line-height: 44px;
+        }
+        .parallax__btn {
+            display: block;
+            margin: 53px auto;
+        }
+    }
+    .parallax__overlay {
+        background-color: rgba(192, 48, 28, .6);
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+}
+
+//блог
+
+.blog {
+    height: 1078px;
+    padding: $padding_block;
+}
+
+//отзывы клиентов
+
+.clients {
+    height: 477px;
+    width: 100%;
+    background-color: $bg_grey;
+    padding: 100px 351px;
+    box-sizing: border-box;
+    text-align: center;
+    .clients__ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 68px;
+        .clients__img {
+            height: auto;
+        }
+    }
+    .clients__feedback {
+        
+        .clients__text {
+            text-align: center;
+            blockquote {
+                margin-bottom: 40px;
+                p {
+                    font-size: 18px;
+                    line-height: 30px;
+                    color: $dark_color;
+                    font-style: italic;
+                    margin-bottom: 40px;
+                }
+                cite {
+                    color: $dark_color;
+                    font-size: 20px;
+                    font-style: normal;
+                }
+            }
+        }
+        .client__text--first {
+            display: block;
+            position: relative;
+            z-index: 3;
+        }
+        .clients__text--second {
+            position: absolute;
+            z-index: 2;
+            display: none;
+        }
+        .clients__text--third {
+            position: absolute;
+            z-index: 1;
+            display: none;
+        }
+    }
+    .clients__btn {
+        border-radius: 50%;
+        border: 1px solid #dddddd;
+        width: 13px;
+        height: 13px;
+        font-size: 13px;
+        line-height: 13px;
+        background: #dddddd;
+        color: #dddddd;
+        margin-right: 7px;
+        box-sizing: border-box;
+    }
+    .clients__btn:last-child {
+        margin-right: 0;
+    }
+    .clients__btn--first {
+        background: $decor_color;
+        color: $decor_color;
+        border: 1px solid #dddddd;
+    }
+}
+
+
+//форма отправки и контакты
+
+.feedback {
+    height: 661px;
+    padding: $padding_block;
+    box-sizing: border-box;
+}
+
+//подвал
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 307px;
+    box-sizing: border-box;
+    background-color: $decor_color;
+    padding: 100px 230px;
+    .social {
+        display: flex;
+        justify-content: center;
+        img {
+        box-sizing: border-box;
+        border: 2px solid $light_color;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        padding: 5px;
+        }
+        a {
+            margin-right: 14px;
+        }
+        a:last-child {
+            margin-right: 0;
+        }
+    }
+    span {
+        color: $light_color;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 11px;
+    }
+}
+
+
+
+
+
+
+
+@media (max-width: 575px) {
+    header {
+        width: 100%;
+        height: auto;
+    }
+}
