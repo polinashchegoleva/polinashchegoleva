@@ -87,30 +87,37 @@
             <li class="clients__li"><img src="images/client_logo_5.png" alt="логотип компании Wompify" class="clietns__img"></li>
         </ul>
         
-        <div class="clients__feedback">
-            <div class="clients__text clients__text--first">
-                <blockquote>
-                    <p>Это первый блок possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum</p>
-                    <cite>John Doe, Google Inc.</cite>
-                </blockquote>
+        <div class="slider">
+               
+                <input type="radio" id="btn-1" name="toggle" checked>
+                <input type="radio" id="btn-2" name="toggle">
+                <input type="radio" id="btn-3" name="toggle">
+             
+                <div class="slider-inner">
+                    <div class="slider-slides">
+                        <blockquote>
+                        	<p>№ 1 Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum”</p>
+                        	<cite>John Doe, Google Inc.</cite>
+                        </blockquote>
+                        <blockquote>
+                        	<p>№ 2 Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum”</p>
+                        	<cite>John Doe, Google Inc.</cite>
+                        </blockquote>
+                        <blockquote>
+                        	<p>№ 3 Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum”</p>
+                        	<cite>John Doe, Google Inc.</cite>
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                	<label for="btn-1"></label>
+                    <label for="btn-2"></label>
+                    <label for="btn-3"></label>
+                </div>
+                
             </div>
-            <div class="clients__text clients__text--second">
-                <blockquote>
-                    <p>Это второй блок possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum</p>
-                    <cite>John Doe, Google Inc.</cite>
-                </blockquote>
-            </div>
-            <div class="clients__text clients__text--third">
-                <blockquote>
-                    <p>Это третий блок possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum</p>
-                    <cite>John Doe, Google Inc.</cite>
-                </blockquote>
-            </div>
-        </div>
         
-        <button class="clients__btn clients__btn--first">&#9675;</button>
-        <button class="clients__btn clients__btn--second">&#9675;</button>
-        <button class="clients__btn clients__btn--third">&#9675;</button>
         
     </div>
     
@@ -118,8 +125,37 @@
         <h2>Get in touch</h2>
         <div class="linedecor"></div>
         <p class="discription">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
-        <div class="feedback__contact"></div>
-        <form></form>
+        
+        <div class="feedback-cover">
+			<div class="feedback-contacts">
+				<div class="contacts-address contacts-cover">
+
+					<h4>Address</h4>
+					<span>312, 7th Ave, New York<br/>
+	NY 101200, United States of America</span>
+				</div>
+				<div class="contacts-hotline contacts-cover">
+					<h4>Hotline (24x7)</h4>
+					<span>+65 0052 300, +65 88251 210<br/>
+	+88 01723 511 340</span>
+				</div>
+				<div class="contacts-email contacts-cover">
+					<h4>E-mail</h4>
+					<span>shapedtheme@gmail.com<br/>
+	khalilkode@gmail.com</span>
+				</div>
+			</div>
+
+			<form>
+				<input type="text" name="user-name" placeholder="YOUR NAME">
+				<input type="email" name="user-email" placeholder="YOUR E-MAIL">
+				<input type="text" name="user-subject" placeholder="YOUR SUBGECT">
+				<input type="text" name="user-company" placeholder="YOUR COMPANY">
+				<textarea name="user-message" id="" cols="30" rows="10" placeholder="WRITE YOUR MESSAGE"></textarea>
+				<input type="button" value="SEND YOUR MESSAGE">
+				<span><span class="span__first-letter">*</span> We’ll contact you as as possible. We don’t reply on Monday.</span>
+			</form>
+        </div>
     </div>
     
     <footer>

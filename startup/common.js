@@ -9,3 +9,23 @@ $(function(){
 });
 
 
+$(function() {  
+
+     $(".clients__btn--second").click(function() { 
+	  $(".clients__text--first").fadeOut();
+      $(".clients__text--second").fadeIn(1000); 
+     }); 
+
+     $(".clients__btn--third").click(function() { 
+	  $(".clients__text--first").fadeOut();
+      $(".clients__text--second").fadeOut(); 
+	  $(".clients__text--third").fadeIn(1000);
+     }); 
+	
+	 $(".clients__btn--first").click(function() {
+      $(".clients__text--second").fadeOut(); 
+	  $(".clients__text--third").fadeOut();
+	  $(".clients__text--first").fadeIn(1000);
+	 })
+
+     }); 

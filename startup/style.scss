@@ -149,7 +149,7 @@ ul {
 //общие стили для заголовков разделов
 
 h2 {
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-size: 20px;
     color: $dark_color;
     text-align: center;
@@ -192,7 +192,7 @@ h2 {
                 text-transform: uppercase;
                 font-size: 14px;
                 font-weight: 400;
-                font-family: Montserrat;
+                font-family: "Montserrat";
                 text-align: center;
                 margin: 29px 0 24px;
             }
@@ -256,7 +256,7 @@ h2 {
         p {
             color: $light_color;
             text-align: center;
-            font-family: RobotoSlab;
+            font-family: "RobotoSlab";
             font-size: 30px;
             line-height: 44px;
         }
@@ -286,7 +286,7 @@ h2 {
 //отзывы клиентов
 
 .clients {
-    height: 477px;
+    height: auto;
     width: 100%;
     background-color: $bg_grey;
     padding: 100px 351px;
@@ -301,71 +301,172 @@ h2 {
             height: auto;
         }
     }
-    .clients__feedback {
-        
-        .clients__text {
-            text-align: center;
-            blockquote {
-                margin-bottom: 40px;
-                p {
-                    font-size: 18px;
-                    line-height: 30px;
-                    color: $dark_color;
-                    font-style: italic;
-                    margin-bottom: 40px;
-                }
-                cite {
-                    color: $dark_color;
-                    font-size: 20px;
-                    font-style: normal;
-                }
-            }
-        }
-        .client__text--first {
-            display: block;
-            position: relative;
-            z-index: 3;
-        }
-        .clients__text--second {
-            position: absolute;
-            z-index: 2;
-            display: none;
-        }
-        .clients__text--third {
-            position: absolute;
-            z-index: 1;
-            display: none;
-        }
-    }
-    .clients__btn {
-        border-radius: 50%;
-        border: 1px solid #dddddd;
-        width: 13px;
-        height: 13px;
-        font-size: 13px;
-        line-height: 13px;
-        background: #dddddd;
-        color: #dddddd;
-        margin-right: 7px;
-        box-sizing: border-box;
-    }
-    .clients__btn:last-child {
-        margin-right: 0;
-    }
-    .clients__btn--first {
-        background: $decor_color;
-        color: $decor_color;
-        border: 1px solid #dddddd;
-    }
+	.slider {
+		position: relative;
+		input[type="radio"] {
+			display: none;
+		}
+		#btn-1:checked ~ .slider-controls label[for="btn-1"],
+		#btn-2:checked ~ .slider-controls label[for="btn-2"],
+		#btn-3:checked ~ .slider-controls label[for="btn-3"] { 
+    		background: $decor_color;
+		}
+		#btn-1:checked ~ .slider-inner .slider-slides {
+			transform: translate(0);
+		}
+		#btn-2:checked ~ .slider-inner .slider-slides {
+			transform: translate(calc(-100% / 3));
+		}
+		#btn-3:checked ~ .slider-inner .slider-slides {
+			transform: translate(calc(-200% / 3));
+		}
+		.slider-controls{
+			margin-top: 40px;
+			label {
+				display: inline-block;
+				width: 13px;
+				height: 13px;
+				margin: 0 3.5px;
+				cursor: pointer;
+				box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.8);
+				border-radius: 50%;
+			}
+		}
+		.slider-inner {
+			overflow: hidden;
+			.slider-slides {
+				width: 300%;
+				blockquote {
+					float: left;
+					width: calc(100% / 3);
+    				height: auto;
+					color: $dark_color;
+					p {
+						padding-bottom: 40px;
+						font-style: italic;
+						line-height: 30px;
+						font-size: 18px;
+					}
+					cite {
+						font-style: normal;
+						font-size: 20px;
+					}
+				}
+			}
+		}
+	}
 }
 
 
 //форма отправки и контакты
 
 .feedback {
-    height: 661px;
+    height: auto;
     padding: $padding_block;
     box-sizing: border-box;
+	color: $dark_color;
+	.feedback-cover {
+		height: auto;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		.feedback-contacts {
+			display: flex;
+			flex-direction: column;
+			width: 250px;
+			height: auto;
+			.contacts-cover {
+				width: 100%; 
+				padding-left: 30px;
+				position: relative;
+				z-index: 1;
+				margin-bottom: 40px;
+				h4 {
+					text-transform: uppercase;
+					margin-bottom: 20px;
+					position: relative;
+					z-index: -1;
+				}
+				span {
+					line-height: 20px;
+					font-size: 12px;
+				}
+			}
+			.contacts-cover::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 30px;
+					height: 30px;;
+					z-index: 1;
+					background-repeat: no-repeat;
+				}
+			.contacts-address::before {
+				background-image: url(images/address.svg);
+			}
+			.contacts-hotline::before {
+				background-image: url(images/hotline.svg);
+			}
+			.contacts-email::before {
+				background-image: url(images/email.svg);
+			}
+			.contacts-cover:last-child {
+				margin-bottom: 0;
+			}
+		}
+		form {
+			width: 730px;
+			input {
+				height: 44px;
+				border: 1px solid $dark_color;
+				padding-left: 17px;
+				box-sizing: border-box;
+				width: 350px;
+				margin-bottom: 21px;
+				box-sizing: border-box;
+			}
+			input:nth-of-type(2n) {
+				float: right;
+			}
+			input[type="button"] {
+				color: $dark_color;
+				cursor: pointer;
+				transition: .5s;
+				width: 170px;
+				padding-left: 0;
+				margin-bottom: 0;
+			}
+			input[type="button"]:hover {
+				background: $decor_color;
+				color: $light_color;
+				border: 1px solid $decor_color;
+			}
+			textarea {
+				width: 100%;
+				margin-bottom: 21px;
+				padding: 17px;
+				box-sizing: border-box;
+				resize: none;
+			}
+			input:hover,
+			textarea:hover {
+				border: 1px solid $decor_color;
+			}
+			input:focus,
+			textarea:focus {
+				outline: none;
+			}
+			span {
+				font-size: 12px;
+				padding-left: 38px;
+			}
+			.span__first-letter {
+				color: $decor_color;
+				padding-left: 0;
+			}
+		}
+	}
 }
 
 //подвал
@@ -403,10 +504,6 @@ footer {
         font-size: 11px;
     }
 }
-
-
-
-
 
 
 

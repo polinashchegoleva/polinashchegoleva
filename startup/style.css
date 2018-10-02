@@ -113,7 +113,7 @@ ul {
   background-color: #fff; }
 
 h2 {
-  font-family: Montserrat;
+  font-family: "Montserrat";
   font-size: 20px;
   color: #555555;
   text-align: center;
@@ -150,7 +150,7 @@ h2 {
         text-transform: uppercase;
         font-size: 14px;
         font-weight: 400;
-        font-family: Montserrat;
+        font-family: "Montserrat";
         text-align: center;
         margin: 29px 0 24px; }
       .services ul li p {
@@ -198,7 +198,7 @@ h2 {
     .parallax .parallax_content p {
       color: #fff;
       text-align: center;
-      font-family: RobotoSlab;
+      font-family: "RobotoSlab";
       font-size: 30px;
       line-height: 44px; }
     .parallax .parallax_content .parallax__btn {
@@ -218,7 +218,7 @@ h2 {
   padding: 100px 230px; }
 
 .clients {
-  height: 477px;
+  height: auto;
   width: 100%;
   background-color: #f8f8f8;
   padding: 100px 351px;
@@ -231,54 +231,135 @@ h2 {
     margin-bottom: 68px; }
     .clients .clients__ul .clients__img {
       height: auto; }
-  .clients .clients__feedback .clients__text {
-    text-align: center; }
-    .clients .clients__feedback .clients__text blockquote {
-      margin-bottom: 40px; }
-      .clients .clients__feedback .clients__text blockquote p {
-        font-size: 18px;
-        line-height: 30px;
-        color: #555555;
-        font-style: italic;
-        margin-bottom: 40px; }
-      .clients .clients__feedback .clients__text blockquote cite {
-        color: #555555;
-        font-size: 20px;
-        font-style: normal; }
-  .clients .clients__feedback .client__text--first {
-    display: block;
-    position: relative;
-    z-index: 3; }
-  .clients .clients__feedback .clients__text--second {
-    position: absolute;
-    z-index: 2;
-    display: none; }
-  .clients .clients__feedback .clients__text--third {
-    position: absolute;
-    z-index: 1;
-    display: none; }
-  .clients .clients__btn {
-    border-radius: 50%;
-    border: 1px solid #dddddd;
-    width: 13px;
-    height: 13px;
-    font-size: 13px;
-    line-height: 13px;
-    background: #dddddd;
-    color: #dddddd;
-    margin-right: 7px;
-    box-sizing: border-box; }
-  .clients .clients__btn:last-child {
-    margin-right: 0; }
-  .clients .clients__btn--first {
-    background: #c0301c;
-    color: #c0301c;
-    border: 1px solid #dddddd; }
+  .clients .slider {
+    position: relative; }
+    .clients .slider input[type="radio"] {
+      display: none; }
+    .clients .slider #btn-1:checked ~ .slider-controls label[for="btn-1"],
+    .clients .slider #btn-2:checked ~ .slider-controls label[for="btn-2"],
+    .clients .slider #btn-3:checked ~ .slider-controls label[for="btn-3"] {
+      background: #c0301c; }
+    .clients .slider #btn-1:checked ~ .slider-inner .slider-slides {
+      transform: translate(0); }
+    .clients .slider #btn-2:checked ~ .slider-inner .slider-slides {
+      transform: translate(calc(-100% / 3)); }
+    .clients .slider #btn-3:checked ~ .slider-inner .slider-slides {
+      transform: translate(calc(-200% / 3)); }
+    .clients .slider .slider-controls {
+      margin-top: 40px; }
+      .clients .slider .slider-controls label {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        margin: 0 3.5px;
+        cursor: pointer;
+        box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.8);
+        border-radius: 50%; }
+    .clients .slider .slider-inner {
+      overflow: hidden; }
+      .clients .slider .slider-inner .slider-slides {
+        width: 300%; }
+        .clients .slider .slider-inner .slider-slides blockquote {
+          float: left;
+          width: calc(100% / 3);
+          height: auto;
+          color: #555555; }
+          .clients .slider .slider-inner .slider-slides blockquote p {
+            padding-bottom: 40px;
+            font-style: italic;
+            line-height: 30px;
+            font-size: 18px; }
+          .clients .slider .slider-inner .slider-slides blockquote cite {
+            font-style: normal;
+            font-size: 20px; }
 
 .feedback {
-  height: 661px;
+  height: auto;
   padding: 100px 230px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  color: #555555; }
+  .feedback .feedback-cover {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+    .feedback .feedback-cover .feedback-contacts {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      height: auto; }
+      .feedback .feedback-cover .feedback-contacts .contacts-cover {
+        width: 100%;
+        padding-left: 30px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 40px; }
+        .feedback .feedback-cover .feedback-contacts .contacts-cover h4 {
+          text-transform: uppercase;
+          margin-bottom: 20px;
+          position: relative;
+          z-index: -1; }
+        .feedback .feedback-cover .feedback-contacts .contacts-cover span {
+          line-height: 20px;
+          font-size: 12px; }
+      .feedback .feedback-cover .feedback-contacts .contacts-cover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+        background-repeat: no-repeat; }
+      .feedback .feedback-cover .feedback-contacts .contacts-address::before {
+        background-image: url(images/address.svg); }
+      .feedback .feedback-cover .feedback-contacts .contacts-hotline::before {
+        background-image: url(images/hotline.svg); }
+      .feedback .feedback-cover .feedback-contacts .contacts-email::before {
+        background-image: url(images/email.svg); }
+      .feedback .feedback-cover .feedback-contacts .contacts-cover:last-child {
+        margin-bottom: 0; }
+    .feedback .feedback-cover form {
+      width: 730px; }
+      .feedback .feedback-cover form input {
+        height: 44px;
+        border: 1px solid #555555;
+        padding-left: 17px;
+        box-sizing: border-box;
+        width: 350px;
+        margin-bottom: 21px;
+        box-sizing: border-box; }
+      .feedback .feedback-cover form input:nth-of-type(2n) {
+        float: right; }
+      .feedback .feedback-cover form input[type="button"] {
+        color: #555555;
+        cursor: pointer;
+        transition: .5s;
+        width: 170px;
+        padding-left: 0;
+        margin-bottom: 0; }
+      .feedback .feedback-cover form input[type="button"]:hover {
+        background: #c0301c;
+        color: #fff;
+        border: 1px solid #c0301c; }
+      .feedback .feedback-cover form textarea {
+        width: 100%;
+        margin-bottom: 21px;
+        padding: 17px;
+        box-sizing: border-box;
+        resize: none; }
+      .feedback .feedback-cover form input:hover,
+      .feedback .feedback-cover form textarea:hover {
+        border: 1px solid #c0301c; }
+      .feedback .feedback-cover form input:focus,
+      .feedback .feedback-cover form textarea:focus {
+        outline: none; }
+      .feedback .feedback-cover form span {
+        font-size: 12px;
+        padding-left: 38px; }
+      .feedback .feedback-cover form .span__first-letter {
+        color: #c0301c;
+        padding-left: 0; }
 
 footer {
   display: flex;
