@@ -337,7 +337,8 @@ h2 {
         transition: .5s;
         width: 170px;
         padding-left: 0;
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        background: #fff; }
       .feedback .feedback-cover form input[type="button"]:hover {
         background: #c0301c;
         color: #fff;
